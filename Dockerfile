@@ -18,7 +18,7 @@ RUN yum install -y vim tar wget curl rsync bzip2 iptables tcpdump less telnet ne
 # 安装openjdk1.8
 RUN yum remove java* -y
 COPY server-jre-8u181-linux-x64.tar.gz /root/jre8.tar.gz
-RUN tar -zxvf jre8.tar.gz
+RUN tar -zxvf /root/jre8.tar.gz
 RUN mv /root/jdk1.8.0_181/ /usr/local/
 RUN echo "export JAVA_HOME=/usr/local/jdk1.8.0_181/" >> /etc/profile
 RUN echo "export JRE_HOME=/usr/local/jdk1.8.0_181/jre/" >> /etc/profile
