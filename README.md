@@ -1,4 +1,4 @@
-oracle server-jre-8u181 下载地址：https://www.oracle.com/technetwork/java/javase/downloads/server-jre8-downloads-2133154.html
+oracle server-jre-8u181 下载地址：https://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html
 
 ---
 
