@@ -17,7 +17,8 @@ RUN yum install -y vim tar wget curl rsync bzip2 iptables tcpdump less telnet ne
 
 # 安装openjdk1.8
 RUN yum remove java* -y
-COPY jre-8u181-linux-x64.rpm /root/jre-8u181-linux-x64.rpm
+# COPY jre-8u181-linux-x64.rpm /root/jre-8u181-linux-x64.rpm
+RUN wget -O /root/jre-8u181-linux-x64.rpm https://test-1256264023.cos.ap-chengdu.myqcloud.com/jre-8u181-linux-x64.rpm
 RUN rpm -ivh /root/jre-8u181-linux-x64.rpm
 # RUN mv /root/jdk1.8.0_181/ /usr/local/
 # RUN chown 755 -R /use/local/jdk1.8.0_181/
