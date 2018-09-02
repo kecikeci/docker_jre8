@@ -25,6 +25,7 @@ RUN echo "export JRE_HOME=/usr/local/jdk1.8.0_181/jre/" >> /etc/profile
 RUN echo "export CLASSPATH=$JRE_HOME/lib/rt.jar:$JRE_HOME/lib/ext" >> /etc/profile
 RUN echo "export PATH=$PATH:$JRE_HOME/bin" >> /etc/profile
 RUN source /etc/profile
+RUN rm -rf /root/jre8.tar.gz
 
 # 更新yum包 更新最新内核
 RUN yum update -y
