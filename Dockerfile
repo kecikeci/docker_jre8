@@ -20,6 +20,7 @@ RUN yum remove java* -y
 COPY server-jre-8u181-linux-x64.tar.gz /root/jre8.tar.gz
 RUN tar -zxvf /root/jre8.tar.gz -C /root/
 RUN mv /root/jdk1.8.0_181/ /usr/local/
+RUN chown 755 -R /use/local/jdk1.8.0_181/
 RUN echo "export JAVA_HOME=/usr/local/jdk1.8.0_181/" >> /etc/profile
 RUN echo "export JRE_HOME=/usr/local/jdk1.8.0_181/jre/" >> /etc/profile
 RUN echo "export CLASSPATH=$JRE_HOME/lib/rt.jar:$JRE_HOME/lib/ext" >> /etc/profile
