@@ -3,7 +3,6 @@
 FROM hub.c.163.com/library/centos:7.2.1511
 MAINTAINER https://4xx.me
 
-RUN cp -f /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 RUN yum install wget -y
 
 # 更换阿里源
@@ -24,10 +23,13 @@ RUN rm -rf /root/jre-8u181-linux-x64.rpm
 # 更新yum包 更新最新内核
 RUN yum update -y
 
+# 中文设置
+RUN localedef -c -f UTF-8 -i zh_CN zh_CN.utf8
+ENV LANG="zh_CN.UTF-8" 
+
+# 时区设置
+RUN ln -snf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo 'Asia/Shanghai' > /etc/timezone
+
 # 清除yum缓存
 RUN yum clean all
 RUN rm -rf /var/cache/yum/*
-
-# 中文设置
-ENV LANG="zh_CN.UTF-8" 
-RUN localedef -c -f UTF-8 -i zh_CN zh_CN.utf8
